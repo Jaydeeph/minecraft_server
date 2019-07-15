@@ -28,11 +28,14 @@ do
                 ;;
             2)
                 sudo cp ./minecraft.service /etc/systemd/system/
+                sudo systemctl daemon-reload
                 sudo apt-get install default-jre -y
-                curl -O https://launcher.mojang.com/v1/objects/d0d0fe2b1dc6ab4c65554cb734270872b72dadd6/server.jar
-                mkdir minecraft
-                mv server.jar minecraft/
-                sed -i 's/eula=false/eula=true/g' eula.txt
+                sudo curl -O https://launcher.mojang.com/v1/objects/d0d0fe2b1dc6ab4c65554cb734270872b72dadd6/server.jar
+                sudo mkdir minecraft
+                sudo mv server.jar minecraft/
+                sudo mv minecraft/ /home/$(whoami)
+                sudo java -jar server.jar
+                sudo sed -i 's/eula=false/eula=true/g' eula.txt
                 echo -e "${GREEN} Finished installing minecraft server. ${DEFAULT}"
                 ;;
             3)
