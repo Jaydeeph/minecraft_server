@@ -55,7 +55,7 @@ do
                 echo -e "${GREEN} Deleted Minecraft. ${DEFAULT}"
                 ;;
             7)
-            echo -e "${GREEN} Cya."
-            exit ;;
-            esac
+                echo -e "${GREEN} Cya."
+                exit ;;
+        esac
 done
