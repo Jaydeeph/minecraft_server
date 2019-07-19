@@ -6,6 +6,6 @@ resource "google_compute_firewall" "minecraft_firewall" {
 
   allow {
     protocol = "tcp"
-    ports    = "${var.poolui_allowed_ports}"
+    ports    = "${var.allowed_ports}"
   }
 }

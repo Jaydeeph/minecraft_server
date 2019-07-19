@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = "${file("~/minecraft-246610-5e7544762e23.json")}"
+  credentials = "${file("~/minecraft-246610-9450c619cc82.json")}"
   project     = "${var.project}"
   region      = "europe-west2"
 }

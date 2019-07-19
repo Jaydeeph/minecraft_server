@@ -43,5 +43,5 @@ variable "scripts" {
 }
 
 variable "allowed_ports" {
-  default = "25565"
+  default = ["25565"]
 }
