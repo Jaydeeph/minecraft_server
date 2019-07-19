@@ -30,13 +30,12 @@ do
                 ;;
             2)
                 echo -e "${CYAN} Installing minecraft server...${DEFAULT}"
-                install_minecraft
+                install_minecraft()
                 echo -e "${GREEN} Finished installing minecraft server. ${DEFAULT}"
                 ;;
             3)
                 echo -e "${CYAN} Starting minecraft server...${DEFAULT}"
-                select_minecraft_version
-                start_minecraft
+                start_minecraft()
                 echo -e "${GREEN} Minecraft server started. ${DEFAULT}"
                 ;;
             4)
