@@ -1,0 +1,11 @@
+[Unit]
+Description=Minecraft Server
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+WorkingDirectory=/home/minecraft/minecraft-server
+ExecStart=/usr/bin/java -Xms2048M -Xmx2048M -jar /home/minecraft/minecraft-server/forge-1.12.2-14.23.5.2768-universal.jar nogui
+
+[Install]
+WantedBy=multi-user.target

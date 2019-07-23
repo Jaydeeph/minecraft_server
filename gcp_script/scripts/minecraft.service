@@ -1,9 +1,0 @@
-[Unit]
-Description=Minecraft Server
-
-[Service]
-WorkingDirectory=/home/$(whomai)/minecraft-server
-ExecStart=sudo java -Xms2048M -Xmx2048M -jar server.jar
-
-[Install]
-WantedBy=multi-user.target

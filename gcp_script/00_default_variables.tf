@@ -19,7 +19,7 @@ variable "zone" {
 }
 
 variable "image" {
-  default = "ubuntu-minimal-1804-bionic-v20190628"
+  default = "ubuntu-1804-bionic-v20190722a"
 }
 
 variable "network" {
@@ -39,8 +39,25 @@ variable "private_key" {
 }
 
 variable "scripts" {
-  default = ["minecraft_script.sh"]
+  default = ["scripts/install.sh"]
 }
+
+variable "mods_file_source" {
+  default = "files/mods"
+}
+
+variable "mods_file_destination" {
+  default = "/home/minecraft/minecraft-server/mods/"
+}
+
+variable "service_file_source" {
+  default = "files/minecraft.service"
+}
+
+variable "service_file_destination" {
+  default = "/home/minecraft/minecraft.service"
+}
+
 
 variable "allowed_ports" {
   default = ["25565"]

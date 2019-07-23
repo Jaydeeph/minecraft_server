@@ -103,7 +103,6 @@ select_minecraft_version() {
 }
 
 install_minecraft() {
-
     sudo cp ./minecraft.service /etc/systemd/system/
     sudo systemctl daemon-reload
     sudo apt-get install default-jre -y
