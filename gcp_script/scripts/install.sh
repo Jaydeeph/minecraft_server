@@ -51,11 +51,13 @@ sudo sed -i 's/eula=false/eula=true/g' eula.txt
 
 echo -e "${CYAN} Changing minecraft server seed. ${DEFAULT}"
 sudo systemctl start minecraft
-sleep 10
-sudo sed -i 's/level-seed=/level-seed=$minecraft_seed/g' server.properties
-
+sleep 20
+sudo systemctl stop minecraft
+sudo sed -i 's/level-seed=/level-seed=-8631165658496819045/g' server.properties
+sudo sed -i 's/level-name=world/level-name=Jays-World/g' server.properties
+sudo sed -i 's/view-distance=10/view-distance=20/g' server.properties
 echo -e "${GREEN} Finished installing minecraft server. ${DEFAULT}"
 
 echo -e "${CYAN} Starting minecraft server...${DEFAULT}"
-sudo systemctl restart minecraft
+sudo systemctl start minecraft
 echo -e "${GREEN} Minecraft server started. ${DEFAULT}"
