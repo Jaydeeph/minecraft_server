@@ -10,8 +10,6 @@ minecraft_forge_version_link="https://files.minecraftforge.net/maven/net/minecra
 minecraft_forge_filename="forge-1.12.2-14.23.5.2768-universal.jar"
 minecraft_seed="-8631165658496819045"
 
-
-echo -e "${CYAN} Installing and downloading updates, needed packages. ${DEFAULT}"
 echo -e "${CYAN} Installing update and upgrade. ${DEFAULT}"
 sudo apt-get update -y
 sudo apt-get upgrade -y
@@ -24,10 +22,6 @@ sudo apt install -y openjdk-8-jdk-headless
 
 echo -e "${CYAN} Installing curl. ${DEFAULT}"
 sudo apt install -y curl
-echo -e "${GREEN} Finished gettings updates. ${DEFAULT}"
-
-
-echo -e "${CYAN} Installing minecraft server...${DEFAULT}"
 
 echo -e "${CYAN} Installing minecraft.service ${DEFAULT}"
 sudo cp ~/minecraft.service /etc/systemd/system/
@@ -49,7 +43,7 @@ sudo java -Xms1024M -Xmx2048M -jar $minecraft_forge_filename nogui
 echo -e "${CYAN} Editing EULA.TXT. ${DEFAULT}"
 sudo sed -i 's/eula=false/eula=true/g' eula.txt
 
-echo -e "${CYAN} Changing minecraft server seed. ${DEFAULT}"
+echo -e "${CYAN} Changing minecraft server seed and other settings. ${DEFAULT}"
 sudo systemctl start minecraft
 sleep 20
 sudo systemctl stop minecraft
